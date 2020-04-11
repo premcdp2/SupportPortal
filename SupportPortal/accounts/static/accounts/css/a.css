@@ -1,0 +1,16 @@
+body {
+    background-color: gray;
+}
+
+h1 {
+    color: white;
+    font-family: verdana;
+    font-size: 300%;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 40px;
+    border: 2px solid powderblue;
+    margin: 100px;
+}
+

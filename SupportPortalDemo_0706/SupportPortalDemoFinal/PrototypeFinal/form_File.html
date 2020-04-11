@@ -1,0 +1,107 @@
+
+<html>
+<head>
+
+<link rel="stylesheet" href="css/form_main.css">
+
+<style>
+.loader {
+  display:none;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.loader1 {
+
+  display:none;
+  float: left;
+  clear: both;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="container">
+  <DIV id="contact" >
+    <h3>File Transfer</h3>
+    <fieldset>
+      <input placeholder="Service Request Number" type="text" tabindex="1" value="">
+      <button type="submit" onclick="myFunction_show_User()">Retrieve</button>
+      <div id="imgToHide" class="loader">Fetching data from ServiceNow...</div>
+         <div id="imgToHide1" class="loader1" > <img src="load.gif" width="150" height="150" > </div>
+        <div id="MainDiv" style="display:none">
+          Service Request Owner
+          <input placeholder="Service Request Responder" type="text" tabindex="2" value="Shankar.g.krishnan">
+          <button class="btn" type="submit" type="submit" onclick="myFunction_show_Action()">Proceed to Action</button>
+        </div>
+        <div id="myDIV"  style="display:none" >
+          Source Path 
+          <input placeholder="Eg: \\Server-Name\<drive Name>\folder name\" type="text" tabindex="3" value=""><br>
+         Destination Path 
+          <input placeholder="Eg: \\Server-Name\<drive Name>\folder name\" type="text" tabindex="4" value="">
+         
+      <button name="submit" type="submit" id="contact-submit" onclick="myFunction()" data-submit="...Sending" >Start File Transfer
+      </button>
+    </fieldset> </div>
+  </div>
+<script>
+function myFunction() {
+
+
+    alert("Action Completed Successfully.");
+    window.opener.location.href="ReqFull.html";
+      window.top.close();
+	}
+
+function chclick() {
+    var checkBox = document.getElementById("myCheck");
+    var text = document.getElementById("text");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+function myFunction_show_User() {
+
+    myVar2=setTimeout(function () {document.getElementById('imgToHide').style.display='block';document.getElementById('imgToHide1').style.display='block'}, 1000);
+    myVar = setTimeout(alertFunc, 5000);
+}
+
+function alertFunc() {
+              var y= document.getElementById('imgToHide');
+              var z= document.getElementById('imgToHide1');
+    var x = document.getElementById("MainDiv");
+    if (x.style.display === "none") {
+              y.style.display = "none";
+              z.style.display = "none";
+        x.style.display = "block";
+   }
+}
+
+
+function myFunction_show_Action() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    }
+}
+<!--<script>-->
+<!--function myFunction() {-->
+
+    <!--document.write('<input type="text" placeholder="Custom level" id="check_box" >');-->
+<!--}-->
+</script>
+  </Div>
+</div>
+</body>
+</html>
+
+
+

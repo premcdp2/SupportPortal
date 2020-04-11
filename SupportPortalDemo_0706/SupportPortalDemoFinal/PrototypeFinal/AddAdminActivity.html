@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Additional Activities</title>
+
+    <link rel="stylesheet" href="css/form_main.css">
+</head>
+<body>
+
+
+<div class="container">
+  <DIV id="contact" >
+    <h3>Add Additional Activities</h3>
+    <fieldset>
+        <div id="MainDiv" style="display:block">
+          <input placeholder="Activity Name" type="text" tabindex="2" required autofocus>
+          <button class="btn" type="submit" type="submit" onclick="myFunction_show_Action()">Proceed to Add</button>
+        </div>
+        <div id="myDIV"  style="display:none" >
+          Select the Script
+          <select>
+              <option value="RDP">  </option>
+            <option value="Server">Telnet Linux/Windows Server</option>
+            <option value="Server">Disable/Enable RDP Access</option>
+            <option value="Security Group ">Remove/Add File Permissions</option>
+              <option value="Security Group ">Remove/Add File Share</option><br><br>
+          </select><br>
+
+          Custom Script Path: <input type="checkbox" id="myCheck"  onclick="chclick()">
+
+      <input id="text" style="display:none" placeholder="You can write Custom Server details here" type="text">
+
+
+      <button name="submit" type="submit" id="contact-submit" onclick="myFunction()" data-submit="...Sending" >Submit
+      </button>
+    </fieldset> </div>
+  </div>
+<script>
+function myFunction() {
+    alert("Activity added Successfully.");
+    window.opener.location.href="Sysadmin.html";
+      window.top.close();
+	}
+
+function chclick() {
+    var checkBox = document.getElementById("myCheck");
+    var text = document.getElementById("text");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+
+function myFunction_show_User() {
+    var x = document.getElementById("MainDiv");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    }
+}
+
+
+function myFunction_show_Action() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    }
+}
+<!--<script>-->
+<!--function myFunction() {-->
+
+    <!--document.write('<input type="text" placeholder="Custom level" id="check_box" >');-->
+<!--}-->
+</script>
+</body>
+</html>

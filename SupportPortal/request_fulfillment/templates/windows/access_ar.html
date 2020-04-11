@@ -1,0 +1,69 @@
+{% load static %}
+<html>
+<head>
+
+<link rel="stylesheet" href="{% static 'services/css/form_main.css' %}">
+    <script src="{% static 'services/js/new1.js' %}"></script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+  <DIV id="contact" >
+    <h3>Add or Remove Access</h3>
+    <fieldset>
+      <input placeholder="Service Request Number" type="text" tabindex="1" value="">
+      <button type="submit" onclick="myFunction_show_User()">Retrieve</button>
+        <div id="MainDiv" style="display:none">
+          <input placeholder="Service Request Responder" type="text" tabindex="2" value="{{ user.username }}">
+          <button class="btn" type="submit" type="submit" onclick="myFunction_show_Action()">Proceed to Action</button>
+        </div>
+        <div id="myDIV"  style="display:none" >
+          Vcenter Name
+          <input placeholder="Vcenter Name" type="text" tabindex="3" value="USDC2TWVM04"><br>
+          VM Name
+          <input placeholder="VM Name" type="text" tabindex="4" value="phoupv50apl01">
+          Resource Type
+          <select>
+            <option value="RDP"> </option>
+            <option value="RDP">RDP</option>
+            <option value="Server">Server</option>
+            <option value="Security Group ">Security Group</option><br><br>
+          </select><br>
+          Resource Action
+          <select>
+            <option value="Server"> </option>
+            <option value="Server">Add</option>
+            <option value="Security Group ">Remove</option><br><br>
+          </select><br>
+          Permission Level
+          <select name="name" size="4" multiple>
+            <option value="Server">Administrator</option>
+            <option value="Security Group ">VM Admin</option>
+            <option value="Security Group ">VM User</option>
+            <option value="Security Group ">ResourcePool Admin</option>
+            <option value="Security Group ">VM Power User</option>
+            <option value="Server">Data Center Admin</option>
+            <option value="Security Group ">Guest User</option>
+          </select><br>
+          Custom Level: <input type="checkbox" id="myCheck"  onclick="chclick()">
+
+      <input id="text" style="display:none" placeholder="You can write Custom Server details here" type="text">
+
+
+      <button name="submit" type="submit" id="contact-submit" onclick="myFunction()" data-submit="...Sending" >Submit
+      </button>
+    </fieldset> </div>
+  </div>
+
+  </Div>
+</div>
+</body>
+</html>
+
+
+

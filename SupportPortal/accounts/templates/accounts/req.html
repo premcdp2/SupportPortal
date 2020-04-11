@@ -1,0 +1,239 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Support Portal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'services/css/bootstrap.min.css' %}" rel="stylesheet">
+     <!-- CSS for slidesjs.com example -->
+  <link rel="stylesheet" href="{% static 'services/css/example.css' %}">
+  <link rel="stylesheet" href="{% static 'services/css/font-awesome.min.css' %}">
+
+
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="{% static 'services/css/custom.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li style="right">
+                        <a href="#">{{ user.username }}</a>
+                    </li>
+                    <li style="right">
+                        <form action="{% url 'logoutV' %}" method="post">
+                            {% csrf_token %}
+                        <button style="right" type="submit" class="btn-link">logout</button>
+                            </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+
+
+
+<div class="jumbotron  feature1" id="Main_Content">
+		<div class="container" >
+                <img class="left"  style="float: left;padding: 4px 5px 5px 0; width: 200px; height: 200px" alt="" src="{% static 'services/img/ReqFul/suporte_tc.png' %}" >
+			<img class="right"  style="float: right;padding: 0 20px 20px 0; width: 250px; height: 250px" alt="" src="{% static 'services/img/ReqFul/BHP_Billiton_Logo.png' %}" >
+            <h2 class="center" style="font-size: 36px; padding: 100px 0px 0px 0; line-height: 50px; text-align: center ">Request Fulfillment</h2>
+
+			</div>
+	</div>
+    <!-- Content -->
+    <div class="container" >
+
+
+        <title>Request Fulfillment</title>
+
+        <div class="row">
+         <article class="col-md-3 article-intro text-center" >
+                <a>
+                    <img src="{% static 'services/img/ReqFul/windowsorg.png' %}" alt="Windows " style="width: 100px; height: 100px"></a>
+             <a>
+                <h4>
+                    Windows
+                </h4>
+             </a>
+
+                <a>
+                <ul style="text-align: left;">
+                    <li><a href="{% url 'resource' %}" target="popup"
+                           onclick="window.open('{% url 'resource' %}','popup','width=600,height=600,scrollbars=yes'); return false;"> <p>Add or Remove Resource</p></a></li>
+                    <li><a href="{% url 'access_ar' %}" target="popup"
+                           onclick="window.open('{% url 'access_ar' %}','popup','width=600,height=600,scrollbars=yes'); return false;"><p>Add or Remove Access</p></a></li>
+
+
+                    <li><a href="{% url 'installV' %}" target="popup"
+                           onclick="window.open('{% url 'installV' %}','popup','width=600,height=600,scrollbars=yes'); return false;"><p>Install or Uninstall Software</p></a></li>
+
+                    <li><a href="Windows.html" target="popup"
+   onclick="window.open('Install.html','popup','width=600,height=600'); return false;"><p>Check Server Availability</p></a></li>
+                    <li><a href="Windows.html" target="popup"
+   onclick="window.open('Install.html','popup','width=600,height=600'); return false;"><p>Pre-check For Patching</p></a></li>
+                    <li><a href="Windows.html" target="popup"
+   onclick="window.open('Install.html','popup','width=600,height=600'); return false;"><p>Space reclamation</p></a></li>
+                                        <li><a href="Windows.html" target="popup"
+   onclick="window.open('Install.html','popup','width=600,height=600'); return false;"><p>Service Restart</p></a></li>
+
+                    {% for item in form %}
+
+                    <li><a href="{% url 'testV' %}" target="popup"
+   onclick="window.open('{% url 'testV' %}','popup','width=600,height=600'); return false;"><p>{{ item.service_name }}</p></a></li>
+
+                    {% endfor %}
+
+
+                </ul>
+                </a>
+             <fieldset><button type="submit" a href="{% url 'activityV' %}" target="popup"
+   onclick="window.open('{% url 'activityV' %}','popup','width=600,height=600,scrollbars=yes'); return false;"><p >Add Additional Activity</p></a>
+                </button><fieldset>
+            </article>
+            <article class="col-md-3 article-intro text-center">
+
+
+                <a>
+                <img src="{% static 'services/img/ReqFul/linux.png' %}" alt="" style="width: 100px; height: 100px"></a>
+                <a>
+                    <h4>Linux/Unix </h4>
+                </a>
+
+                <a>
+                <ul style="text-align: left;">
+                    <li><a target="popup"
+   onclick="window.open('form1.html','popup','width=600,heig
+   ht=600'); return false;"><p style="float: rigt; width: 100%; text-align: center; font-size: 15px;">User & Group Maintenance</p></a></li>
+
+                    <li><a href="Linux.html" target="popup"
+   onclick="window.open('form1.html','popup','width=600,height=600'); return false;"><p style="float: rigt; width: 120%; text-align: center; font-size: 15px;">Disk/CPU/Memory Threshold Limit</p></a></li>
+
+                    <li><a href="Linux.html" target="popup"
+   onclick="window.open('form1.html','popup','width=600,height=600'); return false;"><p style="float: rigt; width: 86%; text-align: center; font-size: 15px;">Configuration changes</p></a></li>
+                    <li><a href="Linux.html" target="popup"
+   onclick="window.open('form_File.html','popup','width=600,height=600'); return false;"><p style="float: rigt; width: 60%; text-align: center; font-size: 15px;">File transfers</p></a></li>
+                </ul>
+                </a>
+                <fieldset><button type="submit" a href="#" target="popup"
+   onclick="window.open('AddActivity.html','popup','width=600,height=600'); return false;"><p >Add Additional Activity</p></a>
+                </button><fieldset>
+
+
+
+            </article>
+            <article class="col-md-3 article-intro text-center">
+               <a>
+                <img src="{% static 'services/img/ReqFul/backup.png' %}" alt="" style="width: 100px; height: 100px">
+                <h4>Backup</h4></a>
+                <a>
+                <ul style="text-align: left;">
+                    <li><a href="Backup.html" target="popup"
+   onclick="window.open('form1.html','popup','width=600,height=600'); return false;"><p >Add or Remove Clients</p></a></li>
+                    <li><a href="Windows.html" target="popup"
+   onclick="window.open('form_backup.html','popup','width=600,height=600'); return false;"><p>Re-Run Backup</p></a></li>
+                    <li><a href="Windows.html" target="popup"
+   onclick="window.open('form2.html','popup','width=600,height=600'); return false;"><p>Restart Backup Client Services</p></a></li>
+                    <li><a href="Windows.html" target="popup"
+   onclick="window.open('Install.html','popup','width=600,height=600'); return false;"><p>Install Client Agent </p></a></li>
+                    <li><a href="Windows.html" target="popup"
+   onclick="window.open('Install.html','popup','width=600,height=600'); return false;"><p>Check Scratch Media availability</p></a></li>
+
+
+                </ul>
+                </a>
+                <fieldset><button type="submit" a href="{% url 'activityV' %}" target="popup"
+   onclick="window.open('{% url 'activityV' %}','popup','width=600,height=600'); return false;"><p >Add Additional Activity</p></a>
+                </button><fieldset>
+            </article>
+
+
+
+
+
+            <article class="col-md-3 article-intro text-center">
+                <a>
+                <img src="{% static 'services/img/ReqFul/storage.png' %}" alt="" style="width: 100px; height: 100px">
+                <h4>Storage </h4></a>
+                <a>
+                <ul style="text-align: left;">
+                    <li><a href="Storage.html" target="popup"
+   onclick="window.open('form1.html','popup','width=600,height=600'); return false;"><p >LUN provisioning or Expansion</p></a></li>
+                                        <li><a href="Storage.html" target="popup"
+   onclick="window.open('form1.html','popup','width=600,height=600'); return false;"><p >Space reclamation </p></a></li>
+                                        <li><a href="Storage.html" target="popup"
+   onclick="window.open('form1.html','popup','width=600,height=600'); return false;"><p >Mount/Mapping Lun/NFS</p></a></li>
+                                        <li><a href="Storage.html" target="popup"
+   onclick="window.open('form1.html','popup','width=600,height=600'); return false;"><p >Storage/Lun Availablity</p></a></li>
+                    <li><a href="#" target="popup"
+   onclick="window.open('form_Share_access.html','popup','width=600,height=600'); return false;"><p >Add/Remove Access for Shares</p></a></li>
+                </ul>
+                </a>
+<!--<button class="btn" type="submit">Add Additional Activity</button>-->
+                <fieldset><button type="submit" a href="{% url 'activityV' %}" target="popup"
+   onclick="window.open('{% url 'activityV' %}','popup','width=600,height=600'); return false;"><p >Add Additional Activity</p></a>
+                </button><fieldset>
+            </article>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- jQuery -->
+    <script src="{% static 'services/js/jquery-1.11.3.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'services/js/bootstrap.min.js' %}"></script>
+
+	<!-- IE10 viewport bug workaround -->
+	<script src="{% static 'services/js/ie10-viewport-bug-workaround.js' %}"></script>
+
+	<!-- Placeholder Images -->
+	<script src="{% static 'services/js/holder.min.js' %}"></script>
+	<!-- End SlidesJS Required: Start Slides -->
+
+  <!-- SlidesJS Required: Link to jQuery -->
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Link to jquery.slides.js -->
+  <script src="{% static 'services/js/jquery.slides.min.js' %}"></script>
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+
+<ul id=menuback  >
+<li><input class="buttonbackmenu" type="button" value="Go back!" onclick="history.back()">
+</ul>
+
+</body>
+
+</html>

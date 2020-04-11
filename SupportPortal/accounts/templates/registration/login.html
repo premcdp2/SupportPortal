@@ -1,0 +1,97 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'accounts/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+<form class="" id="" action="{% url 'loginV' %}" method="post">
+    {% csrf_token %}
+
+	<div class="container-login100" style="background-image: url('{% static 'accounts/images/BHP_Billiton.png' %}');">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+			<DIV class="login100-form validate-form" >
+				<span class="login100-form-title p-b-37">
+					Sign In
+				</span>
+
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
+					{{form.username}}
+					<span class="focus-input100"></span>
+
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
+					{{form.password}}
+					<span class="focus-input100"></span>
+
+				</div>
+
+				{% if request.POST.next %}
+
+				<input type="hidden" name="next" value="{{ request.GET.next }}">
+
+				{% endif %}
+
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn" >
+						Sign In
+					</button>
+				</div>
+
+
+			</Div>
+
+
+
+
+		</div>
+	</div>
+
+    </form>
+
+<!--===============================================================================================-->
+	<script src="{% static 'accounts/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'accounts/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'accounts/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'accounts/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'accounts/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'accounts/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'accounts/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'accounts/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'accounts/js/main.js' %}"></script>
+
+</body>
+</html>

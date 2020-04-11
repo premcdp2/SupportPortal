@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Additional Activities</title>
+    <link rel="stylesheet" href="{% static 'services/css/form_main.css' %}">
+    <script src="{% static 'services/js/activity.js' %}"> </script>
+
+
+</head>
+<body>
+
+
+<div class="container">
+  <DIV id="contact" >
+    <h3>Add Additional Activities</h3>
+    <fieldset>
+        <form action="{% url 'activityV' %}" method="post">
+            {% csrf_token %}
+        <div id="MainDiv" style="display:block">
+            {{form.activity_name}}
+
+            <button class="btn" type="submit" type="submit" onclick="myFunction_show_Action()">Proceed to Action</button>
+          <button class="btn" onclick="myFunction_show_Action()">Proceed to Add</button>
+        </div>
+        <div id="myDIV"  style="display:none" >
+          Select the Script
+          <select>
+              <option value="RDP">  </option>
+            <option value="Server">Telnet Linux/Windows Server</option>
+            <option value="Server">Disable/Enable RDP Access</option>
+            <option value="Security Group ">Remove/Add File Permissions</option>
+              <option value="Security Group ">Remove/Add File Share</option><br><br>
+          </select><br>
+
+          Custom Script Path: <input type="checkbox" id="myCheck"  onclick="chclick()">
+
+      <input id="text" style="display:none" placeholder="Provide Path of the Script.." type="text">
+
+
+      <button name="submit" type="submit" id="contact-submit" onclick="myFunction()" data-submit="...Sending" >Submit
+      </button>
+    </fieldset> </div>
+  </div>
+
+</body>
+</html>

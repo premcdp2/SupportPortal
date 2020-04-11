@@ -1,0 +1,103 @@
+{
+
+	margin: 0px;
+	padding: 0px;
+}
+
+#StickyNote,li{
+	list-style: none;
+}
+#StickyNote{
+	overflow: hidden;
+	padding: 48px;
+
+}
+#StickyNote li a{
+text-decoration: none;
+color: #000;
+display: block;
+height: 290px;
+width: 290px;
+padding: 10px;
+margin-top: 20px;
+box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+transition: transform .15s linear;
+}
+
+#StickyNote li{
+	margin: 20px;
+	float: left;
+
+}
+#StickyNote li h2{
+	font-size: 140%;
+	font-weight: bold;
+	padding-bottom: 10px;
+
+}
+#StickyNote li p{
+	font-family: cursive;
+	font-size: 150%;
+}
+#StickyNote li a {
+	transform: rotate(0deg);
+}
+#StickyNote li:nth-child(1n) a {
+	transform: rotate(4deg);
+	position: relative;
+	top: -72px;
+	width: 250px;
+	height: 250px;
+	background: #c9e2ff;
+
+}
+#StickyNote li:nth-child(2n) a {
+	transform: rotate(-4deg);
+	position: relative;
+	top: -72px;
+	width: 250px;
+	height: 250px;
+	background: #e5c9ff;
+
+}
+#StickyNote li:nth-child(3n) a {
+	transform: rotate(4deg);
+	position: relative;
+	top: -72px;
+	width: 250px;
+	height: 250px;
+	background: #eeffc9;
+
+}
+#StickyNote li:nth-child(4n) a {
+	transform: rotate(-5deg);
+	position: relative;
+	top: -0px;
+	width: 250px;
+	height: 250px;
+	background: #ffe3c9;
+
+}
+#StickyNote li:nth-child(5n) a {
+	transform: rotate(3deg);
+	position: relative;
+	top: -0px;
+	background: #ffc9dc;
+
+}
+#StickyNote li:nth-child(6n) a {
+	transform: rotate(-5deg);
+	position: relative;
+	top: -0px;
+	background: #c9ffe9;
+
+}
+
+
+#StickyNote li a:hover,#StickyNote li a:focus{
+	box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+	transform: scale(1.25);
+	position: relative;
+	z-index: 5;
+}
+

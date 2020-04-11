@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+
+<form method="post" action="{% url 'registration' %}">
+
+    {% csrf_token %}
+
+<tr><th><label for="id_first_name">First name:</label></th><td><input type="text" name="first_name" class="fn" placeholder="First Name" maxlength="20" required id="id_first_name" /></td></tr>
+<br><br />
+<tr><th><label for="id_last_name">Last name:</label></th><td><input type="text" name="last_name" class="ln" placeholder="Last Name" maxlength="20" required id="id_last_name" /></td></tr>
+<br /><br />
+<tr><th><label for="id_employee_id">Employee id:</label></th><td><input type="text" name="employee_id" class="eid" placeholder="Employee id" maxlength="20" required id="id_employee_id" /></td></tr>
+<br /><br />
+<tr><th><label for="id_username">Username:</label></th><td><input type="text" name="username" maxlength="150" autofocus required id="id_username" /><br /><span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span></td></tr>
+<tr><th><label for="id_password1">Password:</label></th><td><input type="password" name="password1" required id="id_password1" /><br /><span class="helptext"><ul><li>Your password can&#39;t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can&#39;t be a commonly used password.</li><li>Your password can&#39;t be entirely numeric.</li></ul></span></td></tr>
+<tr><th><label for="id_password2">Password confirmation:</label></th><td><input type="password" name="password2" required id="id_password2" /><br /><span class="helptext">Enter the same password as before, for verification.</span></td></tr>
+<br />
+
+    <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/form_main.css">
+
+    <title>Ping me</title>
+    <script>
+    function formSubmit() {
+        document.forms["myForm"].submit();
+    }
+    function formCancel() {
+        document.forms["myForm"].cancel();
+    }
+    function myFunction(){
+        var a=document.getElementById("text_a").value;
+    }
+
+</script>
+</head>
+<body bgcolor="#E6E6FA">
+    <form name="myForm" action=" " method="get">
+      Vcenter Name : <input type="text" name="name"><br> <br>
+      VM Name : <input type="text" name="name"><br><br>
+      Resource Type  : <select>
+      <option value="RDP">RDP</option>
+      <option value="Server">Server</option>
+      <option value="Security Group ">Security Group</option>
+      </select><br> <br>
+      Resource Action : <select>
+      <option value="Add">Add</option>
+      <option value="Remove">Remove</option>
+      </select><br> <br>
+      Permission Level : <select name="name" size="4" multiple>
+      <option value="Test1">Test1</option>
+      <option value="Test2">Test2</option>
+      <option value="Test3">Test3</option>
+      <option value="Test4">Test4</option>
+      <option value="Test1">Test8</option>
+      <option value="Test2">Test7</option>
+      <option value="Test3">Test5</option>
+      <option value="Test4">Test6</option>
+</select><br> <br>
+      Custom Level : <input id="check_box" type="checkbox" name="name" <br><br> <br>
+      <input type="button" onclick="formSubmit()" value="Submit">
+      <input type="button" onclick="formCancel()" value="Cancel">
+    </form>
+</body>
+</html>

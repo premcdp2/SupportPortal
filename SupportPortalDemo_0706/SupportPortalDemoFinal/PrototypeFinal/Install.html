@@ -1,0 +1,62 @@
+
+<html>
+<head>
+
+<link rel="stylesheet" href="css/form_main.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+  <form id="contact" action="" method="post" >
+    <h3>Install or Uninstall Software</h3>
+    <fieldset>
+      <input placeholder="Server Name " type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <!--<label>Resource Type</label>-->
+      <select>
+        <option value="RDP">Application Name</option>
+      <option value="RDP">3D Builder</option>
+      <option value="Server">Adobe Reader</option>
+      <option value="Security Group ">Visual Studio</option>
+          <option value="Security Group ">Pulse Secure</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <!--<label>Resource Action</label>-->
+      <select>
+        <option value="Server">Action</option>
+      <option value="Server">Add</option>
+      <option value="Security Group ">Remove</option>
+        </select>
+    </fieldset>
+    <fieldset>
+      <label>Installation Path </label>
+      <input placeholder="Installation Path" type="text"><br>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" onclick="myFunction()" data-submit="...Sending" >Submit</button>
+    </fieldset>
+<script>
+function myFunction() {
+   alert("Action Completed Successfully.");
+    window.opener.location.href="ReqFull.html";
+      window.top.close();
+  }
+<!--<script>-->
+<!--function myFunction() {-->
+
+    <!--document.write('<input type="text" placeholder="Custom level" id="check_box" >');-->
+<!--}-->
+</script>
+  </form>
+</div>
+</body>
+</html>
+
+
+

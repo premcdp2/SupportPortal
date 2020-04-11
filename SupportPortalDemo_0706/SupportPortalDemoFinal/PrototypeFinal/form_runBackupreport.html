@@ -1,0 +1,114 @@
+
+<html>
+<head>
+
+<link rel="stylesheet" href="css/form_main.css">
+<style>
+.loader {
+  display:none;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.loader1 {
+
+  display:none;
+  float: left;
+  clear: both;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+  <DIV id="contact" >
+    <h3>Backup Report</h3>
+    <fieldset>
+      <div id="MainDiv" style="display:block">
+          <input placeholder="Backup Server Name" type="text" tabindex="2" value="">
+          <button class="btn" type="submit" type="submit" onclick="myFunction_show_Action()">Proceed to run Report</button>
+          <div id="imgToHide" class="loader">Fetching data from Server...</div>
+         <div id="imgToHide1" class="loader1" > <img src="load.gif" width="150" height="150" > </div>
+        <div id="myDIV"  style="display:none" >
+           Report Type
+         <select name="name" >
+            <option value="Server">Last 24hrs Backup Success Report</option>
+            <option value="Server">Last 24hrs Backup Failed Report</option>
+            <option value="Security Group ">Last 1 week Backup Success Report</option>
+            <option value="Security Group ">Last 1 week Backup Failed Report</option>
+            <option value="Security Group ">Repeated failed backup clients report</option>
+          </select><br>
+         <input placeholder="Email to :" type="text" tabindex="1" value=""><br>
+      <button name="submit" type="submit" id="contact-submit" onclick="myFunction()" data-submit="...Sending" >Run Report 
+      </button>
+    </fieldset> </div>
+  </div>
+<script>
+function myFunction() {
+
+
+    alert("Action Completed Successfully.");
+    window.opener.location.href="Sysadmin.html";
+      window.top.close();
+	}
+
+function chclick() {
+    var checkBox = document.getElementById("myCheck");
+    var text = document.getElementById("text");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+
+function myFunction_show_User() {
+    var x = document.getElementById("MainDiv");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    }
+}
+
+function myFunction_show_Action() {
+
+    myVar2=setTimeout(function () {document.getElementById('imgToHide').style.display='block';document.getElementById('imgToHide1').style.display='block'}, 1000);
+    myVar = setTimeout(alertFunc, 5000);
+}
+
+function alertFunc() {
+              var y= document.getElementById('imgToHide');
+              var z= document.getElementById('imgToHide1');
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+              y.style.display = "none";
+              z.style.display = "none";
+        x.style.display = "block";
+   }
+}
+
+// function myFunction_show_Action() {
+//     var x = document.getElementById("myDIV");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//     }
+// }
+<!--<script>-->
+<!--function myFunction() {-->
+
+    <!--document.write('<input type="text" placeholder="Custom level" id="check_box" >');-->
+<!--}-->
+</script>
+  </Div>
+</div>
+</body>
+</html>
+
+
+
